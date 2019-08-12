@@ -1,0 +1,936 @@
+{
+	"info": {
+		"_postman_id": "f5199b22-59fc-4634-85c9-abbd37e9a132",
+		"name": "API-RESTAURANTE",
+		"description": "Projecto de una aplicación de pedidos para un restaurante.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Autenticación ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"racosta\",\n\t\"password\":\"12345\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Autenticar usuario para poder obtener token y realizar las demás transacciones."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Mesas ",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjM4ODd9.RQTLtMZAN4CfTfllwl8Huu47snyCfMtZENrgLbZBAF8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/mesa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mesa"
+					]
+				},
+				"description": "Ruta para listar las mesas del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Nueva Mesa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjM4ODd9.RQTLtMZAN4CfTfllwl8Huu47snyCfMtZENrgLbZBAF8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"numero\":\"4\",\n\t\"capacidad\":\"6\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/mesa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mesa"
+					]
+				},
+				"description": "Ruta para registrar una nueva mesa en el restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Mesa Existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjM4ODd9.RQTLtMZAN4CfTfllwl8Huu47snyCfMtZENrgLbZBAF8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idmesa\":\"2\",\n\t\"numero\":\"10\",\n\t\"capacidad\":\"7\",\n\t\"estado\":\"true\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/mesa",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mesa"
+					]
+				},
+				"description": "Ruta para actualizar una mesa del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar los Platos del Restaurante",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/plato",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plato"
+					]
+				},
+				"description": "Ruta para listar los platos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Categorías de Platos del Restaurante",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/tipoplato",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"tipoplato"
+					]
+				},
+				"description": "Ruta para listar las categorías de platos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Nuevo Plato",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"codigo\":\"P10\",\n\t\"nombre\":\"Arroz chaufa\",\n\t\"descrcipcion\":\"descripción para el plato de arroz chaufa\",\n\t\"precio\":\"9.99\",\n\t\"idtipoplato\":\"2\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/plato",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plato"
+					]
+				},
+				"description": "Ruta para registrar un nuevo plato al restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Plato Existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idplato\":\"3\",\n\t\"codigo\":\"P11\",\n\t\"nombre\":\"Aeropuerto Mixto\",\n\t\"descripcion\":\"Descripción del aeropuerto mixto\",\n\t\"precio\":\"19.99\",\n\t\"idtipoplato\":\"4\",\n\t\"estado\":\"true\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/plato",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plato"
+					]
+				},
+				"description": "Ruta para actualizar un plato existente en el restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Roles Según Estado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/rol/true",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"rol",
+						"true"
+					]
+				},
+				"description": "Ruta para listar roles registrados, según el estado. \nPara listar los inactivos cambiar el true por false."
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Nuevo Rol",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"descripcion\":\"REPARTIDOR\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/rol",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"rol"
+					]
+				},
+				"description": "Ruta para registrar un nuevo rol."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Rol Existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjQyNzd9.be1VdT4zQxqkX3Q-GJFCXZF1O-PdaSAUKoSBcwxQuRA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idrol\":\"3\",\n\t\"descripcion\":\"AYUDANTE\",\n\t\"estado\":\"true\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/rol",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"rol"
+					]
+				},
+				"description": "Ruta para actualizar rol existente."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Usuarios Según Estado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjU2ODZ9.pv7ybOcpcdBBbSr9ElrGJe_pN2sbz0o9sDqXpOYJyH0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/usuario/true",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario",
+						"true"
+					]
+				},
+				"description": "Ruta para listar los usuarios según estado.\nPara listar los inactivos cambiar true por false."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Personas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjYzMDF9.-MCpSsvATn6_qGqa7BA2z85ib7j3X1_tnn5jOgxckbY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/persona",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persona"
+					]
+				},
+				"description": "Ruta para obtener el listado de personas registradas en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Nueva Persona",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzAzNjV9.qsBhPw5CF7ULEmYnnS4f7cb-seQx8ZlBzYGNPgfJweA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nombres\":\"Juan Anderson\",\n\t\"apellidopaterno\":\"Pizarro\",\n\t\"apellidomaterno\":\"Tesen\",\n\t\"dni\":\"75999999\",\n\t\"fechanacimiento\":\"11/09/1992\",\n\t\"sexo\":\"M\",\n\t\"telefono\":\"945234854\",\n\t\"celular\":\"962234854\",\n\t\"email\":\"janderson@gmail.com\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/persona",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persona"
+					]
+				},
+				"description": "Ruta para registrar una nueva persona en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Persona Existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzAzNjV9.qsBhPw5CF7ULEmYnnS4f7cb-seQx8ZlBzYGNPgfJweA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idpersona\":\"3\",\n\t\"nombres\":\"Juan Carlos\",\n\t\"apellidopaterno\":\"Espino\",\n\t\"apellidomaterno\":\"Hernandez\",\n\t\"dni\":\"77999999\",\n\t\"fechanacimiento\":\"10/08/1994\",\n\t\"sexo\":\"M\",\n\t\"telefono\":\"965234854\",\n\t\"celular\":\"965234854\",\n\t\"email\":\"davidjsupoo@gmail.com\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/persona",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"persona"
+					]
+				},
+				"description": "Ruta para actualizar persona registrada en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Nuevo Usuario (Con envio de clave)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NjYzMDF9.-MCpSsvATn6_qGqa7BA2z85ib7j3X1_tnn5jOgxckbY",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idpersona\":\"3\",\n\t\"idrol\":\"3\",\n\t\"email\":\"davidjsupoo@gmail.com\",\n\t\"usuario\":\"dsupo\",\n\t\"fechaingreso\":\"10/07/2019\",\n\t\"altausuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario"
+					]
+				},
+				"description": "Ruta para registrar un nuevo usuario y enviar clave mediante correo electronico."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Usuario Existente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU0NzV9.ObJeAxib-vI9jpjXkAcZ0fjMq9_4txum5f-aOFbjd7U",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idusuario\":\"3\",\n\t\"idpersona\":\"3\",\n\t\"email\":\"davidjsupoo@gmail.com\",\n\t\"usuario\":\"dsupoo\",\n\t\"idrol\":\"3\",\n\t\"fechaingreso\":\"01/06/2019\",\n\t\"altausuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario"
+					]
+				},
+				"description": "Ruta para actualizar un usuario registrado en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Cambiar Contraseña de Usuario",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"usuario\":\"dsupo\",\n\t\"contraseniaactual\":\"LK9ov4OHvt91\",\n\t\"contrasenianueva\":\"12345\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario"
+					]
+				},
+				"description": "Ruta para cambiar la contraseña de un usuario registrado en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Deshabilitar Usuario",
+			"request": {
+				"method": "LOCK",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idusuario\":\"2\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario"
+					]
+				},
+				"description": "Ruta para dar de baja(Bloquear o deshabilitar) a un usuario registrado en la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "Habilitar Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "UNLOCK",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idusuario\":\"2\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/usuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"usuario"
+					]
+				},
+				"description": "Ruta para habilitar(Dar de alta o Desbloquear) a un usuario previamente registrado en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Regitrar Pedido ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idmesa\":\"5\",\n\t\"situacion\":\"P\",\n\t\"tipo\":\"M\",\n\t\"idusuario\":\"2\",\n\t\"platos\":\"{5,4,1}\",\n\t\"cantidades\":\"{1,1,1}\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/pedido",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pedido"
+					]
+				},
+				"description": "Ruta para registrar un nuevo pedido en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Pedidos con Estado Pendiente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/pedidospendientes",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pedidospendientes"
+					]
+				},
+				"description": "Ruta para listar todos los pedidos que tienen el estado Pendiente."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Detalle de Pedido Según ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/pedido/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pedido",
+						"4"
+					]
+				},
+				"description": "Ruta para listar el detalle del pedido según el id ingresado."
+			},
+			"response": []
+		},
+		{
+			"name": "Anular Pedido ",
+			"request": {
+				"method": "LOCK",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idpedido\":\"4\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/pedido",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pedido"
+					]
+				},
+				"description": "Ruta para anular pedido de la base de datos."
+			},
+			"response": []
+		},
+		{
+			"name": "Despachar Pedido",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idpedido\":\"7\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/pedido",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pedido"
+					]
+				},
+				"description": "Ruta para despachar pedido."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Clientes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cliente"
+					]
+				},
+				"description": "Ruta para listar los  clientes registrados en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar Nuevo Cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idpersona\":\"5\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/cliente",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"cliente"
+					]
+				},
+				"description": "Ruta para registrar nuevo cliente en la base de datos del restaurante."
+			},
+			"response": []
+		},
+		{
+			"name": "Pagar Pedidos",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InBlcl9ub21icmVzIjoiUk9NQVJJTyIsInBlcl9hcGVsbGlkb3BhdGVybm8iOiJBQ09TVEEiLCJwZXJfYXBlbGxpZG9tYXRlcm5vIjoiUk9NQU4iLCJwZXJfZG5pIjoiOTk5OTk5OTkiLCJ1c3VfdXN1YXJpbyI6InJhY29zdGEiLCJ1c3VfZW1haWwiOiJyYWNvc3RhQHJlc3QuY29tIiwicm9sX2Rlc2NyaXBjaW9uIjoiQURNSU5JU1RSQURPUiJ9LCJpYXQiOjE1NjU0NzU4NzR9.DQuQI7FoEmekGMdPN9RQO4VRzIubsHvtjQlA0b8weL8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"pedidos\":\"{3,7}\",\n\t\"cliente\":\"1\",\n\t\"numero\":\"2\",\n\t\"usuario\":\"racosta\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/pedido",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pedido"
+					]
+				},
+				"description": "Ruta para pagar los pedidos registrados en la base de datos del restaurnate."
+			},
+			"response": []
+		}
+	]
+}
